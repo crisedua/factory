@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         throw error;
                     }
                 } else {
-                    showFeedback('¡Te has unido con éxito! Estás en la lista de espera, te contactaremos. Bienvenid@ a la Fabrica. 🚀', 'success');
+                    showFeedback('¡Te has unido con éxito! Estás en la lista de espera, te contactaremos. Bienvenid@ a FabricaStartup. 🚀', 'success');
                     form.reset();
                 }
             } catch (err) {
