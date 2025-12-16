@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         throw error;
                     }
                 } else {
-                    showFeedback('¡Te has unido con éxito! Bienvenid@ a la Factory. 🚀', 'success');
+                    showFeedback('¡Te has unido con éxito! Bienvenid@ a la Fabrica. 🚀', 'success');
                     form.reset();
                 }
             } catch (err) {

@@ -132,14 +132,17 @@ a {
 
 /* Hero Section */
 .hero {
-    min-height: 100vh;
+    min-height: auto;
+    /* Was 100vh */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 6rem 5% 0;
+    padding: 6rem 5% 4rem;
+    /* Added bottom padding, kept top */
     position: relative;
     overflow: hidden;
 }
+
 
 .hero-content {
     flex: 1;
@@ -223,7 +226,7 @@ a {
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 500px;
+    height: 400px;
 }
 
 .rocket-container {
@@ -380,7 +383,7 @@ a {
 
 /* Sections */
 section {
-    padding: 5rem 0;
+    padding: 3rem 0;
 }
 
 .section-title {
