@@ -50,6 +50,7 @@ a {
 .gradient-text {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -128,6 +129,25 @@ a {
 
 .btn-small:hover {
     background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    color: var(--primary-color);
 }
 
 /* Hero Section */
@@ -598,12 +618,154 @@ section {
     opacity: 0.8;
 }
 
+/* Utilities Enhancements */
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.top-margin {
+    margin-top: 3rem;
+}
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.styled-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.styled-list li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.styled-list li::before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.check-list-styled {
+    list-style: none;
+    padding-left: 0;
+}
+
+.check-list-styled li {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.comparison-table th {
+    color: var(--primary-color);
+    font-family: 'Outfit', sans-serif;
+}
+
+.highlight-row {
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.quote-box {
+    text-align: center;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #cbd5e1;
+    border-left: 4px solid var(--accent-color);
+    padding: 1rem 2rem;
+    background: var(--glass-bg);
+    border-radius: 0 16px 16px 0;
+    margin: 3rem auto;
+    max-width: 900px;
+}
+
+/* Countdown Timer */
+.countdown-box {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 12px;
+    display: inline-block;
+    backdrop-filter: blur(5px);
+}
+
+.countdown-title {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.countdown-timer {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-val {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+}
+
+.time-label {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-top: 0.2rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+    .grid-2-col {
+        grid-template-columns: 1fr;
+    }
+
     .hero {
         flex-direction: column-reverse;
         padding-top: 8rem;
         text-align: center;
+    }
+
+    .nav-links {
+        display: none;
     }
 
     .hero h1 {

@@ -135,4 +135,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 5000);
         }
     }
+
+    // --- Countdown Timer ---
+    const countdownDate = new Date("Jan 2, 2026 00:00:00").getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        if (distance < 0) {
+            document.getElementById("countdown-box").innerHTML = "<div class='time-val'>¡Lanzamiento!</div>";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        const dEl = document.getElementById("d-val");
+        const hEl = document.getElementById("h-val");
+        const mEl = document.getElementById("m-val");
+        const sEl = document.getElementById("s-val");
+
+        if (dEl) dEl.innerText = days;
+        if (hEl) hEl.innerText = hours < 10 ? "0" + hours : hours;
+        if (mEl) mEl.innerText = minutes < 10 ? "0" + minutes : minutes;
+        if (sEl) sEl.innerText = seconds < 10 ? "0" + seconds : seconds;
+    }
+
+    if (document.getElementById("countdown-box")) {
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+    }
 });
