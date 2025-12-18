@@ -799,6 +799,19 @@ section {
     font-weight: 600;
 }
 
+.closed-message {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(5px);
+}
+
 .form-message.error {
     color: #f87171;
 }
