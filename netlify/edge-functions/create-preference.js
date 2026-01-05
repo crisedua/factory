@@ -36,7 +36,7 @@ export default async (request, context) => {
                     description: 'Acceso temprano a FabricaStartup - Validación de startups',
                     quantity: 1,
                     currency_id: 'CLP',
-                    unit_price: 100000
+                    unit_price: 150000
                 }
             ],
             payer: {
