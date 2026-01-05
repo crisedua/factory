@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 walletContainer.innerHTML = `
                     <div style="margin-top: 1.5rem;">
                         <button id="mp-pay-btn" class="btn-primary" style="display: block; width: 100%; text-align: center; border: none; cursor: pointer; font-family: inherit;">
-                            💳 Pagar $100 ARS con MercadoPago
+                            💳 Pagar $100.000 CLP con MercadoPago
                         </button>
                         <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 1rem; text-align: center;">
                             🔒 Pago seguro procesado por MercadoPago
