@@ -13,6 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
 </head>
 
 <body>
@@ -45,32 +46,14 @@
                 <span>👉 Ingresos reales</span>
             </div>
 
-            <div class="countdown-box" id="countdown-box">
-                <div class="countdown-title">Lanzamiento oficial en:</div>
-                <div class="countdown-timer">
-                    <div class="time-unit">
-                        <span class="time-val" id="d-val">00</span>
-                        <span class="time-label">Días</span>
-                    </div>
-                    <div class="time-unit">
-                        <span class="time-val" id="h-val">00</span>
-                        <span class="time-label">Horas</span>
-                    </div>
-                    <div class="time-unit">
-                        <span class="time-val" id="m-val">00</span>
-                        <span class="time-label">Min</span>
-                    </div>
-                    <div class="time-unit">
-                        <span class="time-val" id="s-val">00</span>
-                        <span class="time-label">Seg</span>
-                    </div>
-                </div>
+            <div class="cta-group">
+                <button id="mp-checkout-btn" class="btn-primary btn-payment">
+                    💳 Únete ahora por <span class="price">$100 ARS</span>
+                </button>
             </div>
 
-            <div class="cta-group">
-                <a href="#waitlist" class="btn-primary">👉 Únete a la lista de espera</a>
-                <a href="#experiments" class="btn-secondary">Accede a los primeros experimentos</a>
-            </div>
+            <p class="payment-note">Pago seguro con MercadoPago</p>
+
         </div>
 
         <div class="hero-visual">
@@ -412,6 +395,16 @@
             <p>&copy; 2024 FabricaStartup. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- Payment Modal -->
+    <div class="payment-modal" id="payment-modal">
+        <div class="payment-modal-content">
+            <button class="payment-modal-close" id="modal-close">&times;</button>
+            <h3>💳 Completa tu pago</h3>
+            <p style="color: #94a3b8; margin-top: 0.5rem;">Acceso a FabricaStartup - $100 ARS</p>
+            <div id="mp-wallet-container"></div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>

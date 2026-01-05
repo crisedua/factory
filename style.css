@@ -821,3 +821,176 @@ section {
     cursor: not-allowed;
     filter: saturate(0.5);
 }
+
+/* MercadoPago Payment Button Styles */
+.btn-payment {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1.1rem;
+    padding: 1.2rem 2.5rem;
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.btn-payment .price {
+    font-weight: 700;
+    color: #fcd34d;
+}
+
+.btn-payment:hover {
+    animation: none;
+    transform: translateY(-3px) scale(1.02);
+}
+
+.btn-payment.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.btn-payment.loading::after {
+    content: " ⏳";
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 4px 30px rgba(99, 102, 241, 0.7), 0 0 40px rgba(139, 92, 246, 0.3);
+    }
+}
+
+.payment-note {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.payment-note::before {
+    content: "🔒";
+}
+
+/* Payment Modal Styles */
+.payment-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-modal.active {
+    display: flex;
+}
+
+.payment-modal-content {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+}
+
+.payment-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.payment-modal-close:hover {
+    color: white;
+}
+
+#mp-wallet-container {
+    margin-top: 1.5rem;
+}
+
+/* Payment Status Message */
+.payment-status-message {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10001;
+    max-width: 500px;
+    width: 90%;
+    padding: 1.5rem;
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    animation: slideDown 0.3s ease-out;
+}
+
+.payment-status-message.success {
+    background: rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(34, 197, 94, 0.4);
+}
+
+.payment-status-message.error {
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.payment-status-message.pending {
+    background: rgba(251, 191, 36, 0.2);
+    border: 1px solid rgba(251, 191, 36, 0.4);
+}
+
+.payment-message-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.payment-message-content p {
+    margin: 0;
+    font-size: 1rem;
+    color: white;
+}
+
+.payment-message-content button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.payment-message-content button:hover {
+    opacity: 1;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}

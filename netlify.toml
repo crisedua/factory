@@ -1,0 +1,6 @@
+[build]
+  publish = "."
+
+[[edge_functions]]
+  path = "/api/create-preference"
+  function = "create-preference"
