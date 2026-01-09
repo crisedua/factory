@@ -1126,3 +1126,64 @@ section {
         transform: translateY(0);
     }
 }
+
+/* Custom Lists */
+.check-list-styled {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.check-list-styled li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+}
+
+.check-list-styled li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    width: 20px;
+    height: 20px;
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 50%;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.styled-list {
+    list-style: none;
+    margin: 1.2rem 0;
+}
+
+.styled-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.6rem;
+}
+
+.styled-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.quote-box {
+    border-left: 4px solid var(--secondary-color);
+    padding: 1rem 1.5rem;
+    background: rgba(236, 72, 153, 0.05);
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    margin: 1.5rem 0;
+}
