@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --bg-color: #ffffff;
     --text-color: #4b5563;
     --text-headings: #111827;
@@ -133,22 +133,19 @@ a {
 
 /* Hero Section */
 .hero {
-    min-height: 90vh;
+    min-height: auto;
     display: flex;
     align-items: center;
-    padding: 8rem 5% 4rem;
-    background: radial-gradient(circle at 70% 30%, rgba(79, 70, 229, 0.05) 0%, transparent 50%);
-}
-
-.hero .container {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 4rem;
-    align-items: center;
+    justify-content: space-between;
+    padding: 6rem 5% 4rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-content {
+    flex: 1;
     max-width: 600px;
+    z-index: 10;
 }
 
 .hero h1 {
@@ -217,9 +214,7 @@ a {
 /* Old button styles removed */
 
 /* Rocket Animation removed */
-.hero-visual {
-    display: none;
-}
+
 
 /* Keyframes removed */
 
@@ -319,7 +314,7 @@ section {
 }
 
 .pillar-card li::before {
-    content: "•";
+    content: "â€¢";
     color: var(--accent-color);
     display: inline-block;
     width: 1em;
@@ -473,7 +468,7 @@ section {
 }
 
 .styled-list li::before {
-    content: "•";
+    content: "â€¢";
     color: var(--secondary-color);
     position: absolute;
     left: 0;
@@ -661,7 +656,7 @@ section {
 }
 
 .btn-payment.loading::after {
-    content: " ⏳";
+    content: " â³";
 }
 
 @keyframes pulse-glow {
@@ -686,7 +681,7 @@ section {
 }
 
 .payment-note::before {
-    content: "🔒";
+    content: "ðŸ”’";
 }
 
 /* Payment Modal Styles */
@@ -954,7 +949,7 @@ section {
 }
 
 .check-list-styled li::before {
-    content: '✓';
+    content: 'âœ“';
     position: absolute;
     left: 0;
     top: 0.2rem;
@@ -983,7 +978,7 @@ section {
 }
 
 .styled-list li::before {
-    content: '•';
+    content: 'â€¢';
     position: absolute;
     left: 0;
     color: var(--primary-color);
@@ -1035,100 +1030,6 @@ section {
     color: #6b7280;
 }
 
-/* Hero Collage */
-.hero-collage {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 1.25rem;
-    height: 600px;
-    position: relative;
-}
-
-.collage-item {
-    border-radius: 24px;
-    background-size: cover;
-    background-position: center;
-    box-shadow: var(--shadow-soft);
-    position: relative;
-    overflow: hidden;
-}
-
-.item-1 {
-    grid-row: span 1;
-    background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
-}
-
-.item-2 {
-    grid-row: span 2;
-    background-image: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1974&auto=format&fit=crop');
-}
-
-.item-3 {
-    grid-row: span 1;
-    background-image: url('https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=2070&auto=format&fit=crop');
-}
-
-.collage-badge {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: var(--primary-color);
-    color: white;
-    padding: 0.5rem;
-    border-radius: 8px;
-    font-size: 1rem;
-}
-
-.floating-card {
-    position: absolute;
-    background: white;
-    padding: 1rem;
-    border-radius: 16px;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    z-index: 20;
-}
-
-.card-received {
-    bottom: 20px;
-    left: -20px;
-    width: 200px;
-}
-
-.card-user {
-    bottom: 80px;
-    right: -30px;
-    width: 220px;
-}
-
-.user-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #e5e7eb;
-}
-
-.card-text h5 {
-    margin: 0;
-    font-size: 0.9rem;
-    color: var(--text-headings);
-}
-
-.card-text span {
-    font-size: 0.75rem;
-    color: #6b7280;
-}
-
-.card-amount {
-    margin-left: auto;
-    color: #10b981;
-    font-weight: 700;
-    font-size: 0.9rem;
-}
-
 /* Collaborators */
 .collaborators {
     padding: 3rem 0;
@@ -1175,4 +1076,165 @@ section {
 .stat-item p {
     font-size: 1.1rem;
     opacity: 0.9;
+}/* Rocket Animation CSS */
+.hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 400px;
 }
+
+.rocket-container {
+    position: relative;
+    width: 120px;
+    height: 250px;
+    animation: bounce 3s ease-in-out infinite;
+    z-index: 20;
+}
+
+.rocket {
+    position: relative;
+    width: 80px;
+    margin: 0 auto;
+    transition: transform 0.3s;
+}
+
+.rocket-body {
+    width: 80px;
+    height: 180px;
+    background: #e2e8f0;
+    border-radius: 50% 50% 10% 10%;
+    position: relative;
+    z-index: 10;
+    background: linear-gradient(to right, #e2e8f0 40%, #cbd5e1 100%);
+    box-shadow: inset 5px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.window {
+    width: 40px;
+    height: 40px;
+    background: #38bdf8;
+    border: 4px solid #94a3b8;
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.fin {
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    height: 60px;
+    background: var(--secondary-color);
+    z-index: 5;
+}
+
+.fin-left {
+    left: -20px;
+    border-radius: 100% 0 0 0;
+}
+
+.fin-right {
+    right: -20px;
+    border-radius: 0 100% 0 0;
+}
+
+.exhaust-flame {
+    position: absolute;
+    top: 90%;
+    left: 20px;
+    width: 40px;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent 10%, #f59e0b 40%, #ef4444 80%);
+    border-radius: 50%;
+    animation: flame 0.2s infinite;
+    z-index: 1;
+    filter: blur(5px);
+}
+
+.exhaust-fumes li {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.1);
+    list-style: none;
+    position: absolute;
+    border-radius: 100%;
+    left: 10px;
+    animation: fume 2s infinite;
+    top: 150px;
+    z-index: 0;
+}
+
+.exhaust-fumes li:nth-child(2) {
+    width: 40px;
+    height: 40px;
+    left: 20px;
+    animation-delay: 0.2s;
+}
+
+.exhaust-fumes li:nth-child(3) {
+    width: 50px;
+    height: 50px;
+    left: 15px;
+    animation-delay: 0.4s;
+}
+
+.exhaust-fumes li:nth-child(4) {
+    width: 70px;
+    height: 70px;
+    left: 5px;
+    animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes flame {
+    0% {
+        height: 80px;
+        width: 40px;
+        opacity: 0.8;
+    }
+
+    50% {
+        height: 100px;
+        width: 45px;
+        opacity: 1;
+    }
+
+    100% {
+        height: 80px;
+        width: 40px;
+        opacity: 0.8;
+    }
+}
+
+@keyframes fume {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(200px) scale(1.5);
+        opacity: 0;
+    }
+}
+
