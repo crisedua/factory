@@ -1067,3 +1067,62 @@ section {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/* Accordion Styles */
+.accordion-item {
+    transition: all 0.3s ease;
+}
+
+.accordion-trigger {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    padding-right: 30px;
+    /* Space for icon */
+}
+
+.accordion-trigger:hover {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    margin: -5px -10px;
+    padding: 5px 40px 5px 10px;
+}
+
+.accordion-content {
+    display: none;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--glass-border);
+    animation: fadeDown 0.3s ease-out;
+}
+
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+.accordion-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
